@@ -2,8 +2,8 @@ class ApplicationController < ActionController::Base
     helper_method :current_user
 
     def current_user
-        if session[:user_id] 
-            @current_user ||= User.find(session[:user_id])
+        if cookies[:remember_token] 
+            @current_user ||= User.find_by_remember_token(cookies[:remember_token])
         else
             @current_user = nil
         end

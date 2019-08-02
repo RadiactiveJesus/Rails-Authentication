@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  resources :posts
   get 'sessions/new' 
-  get 'sessions/create'
+  post 'sessions/create'
   get 'sessions/destroy'
   get 'home/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
