@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
   get 'home/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :users
+  resources :users,only: [:new, :create]
   root   'home#index'  
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
